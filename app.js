@@ -51,5 +51,6 @@ app.post('/contact/send', function(req, res){
 	});
 });
 
-app.listen(8080);
-console.log('server is running on port 8080');
+app.listen(8080, function(){
+	console.log('server is running on port 8080');
+});
