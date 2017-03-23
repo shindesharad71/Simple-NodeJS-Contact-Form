@@ -3,6 +3,10 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
 
+// set the port of our application
+// process.env.PORT lets the port be set by Heroku
+var port = process.env.PORT || 8080;
+
 var app = express();
 
 app.set('views', path.join(__dirname, 'views'));
@@ -51,6 +55,6 @@ app.post('/contact/send', function(req, res){
 	});
 });
 
-app.listen(8080, function(){
-	console.log('server is running on port 8080');
+app.listen(port, function(){
+	console.log('server is running on port '+port);
 });
